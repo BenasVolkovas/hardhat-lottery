@@ -1,13 +1,5 @@
-# Sample Hardhat Project
+# Logic
+1. Enter the lottery by depositing money
+2. Pick a random number (get verified random number)
+3. Smart contract should automatically select a winner every X seconds without human interaction
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
-
-Try running some of the following tasks:
-
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
-```

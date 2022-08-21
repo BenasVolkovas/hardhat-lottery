@@ -1,6 +1,5 @@
 import {HardhatUserConfig} from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
-import "@nomiclabs/hardhat-solhint";
 import "dotenv/config";
 
 const GOERLI_RPC_URL =

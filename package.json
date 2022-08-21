@@ -1,5 +1,6 @@
 {
     "devDependencies": {
+        "@chainlink/contracts": "^0.4.2",
         "@nomicfoundation/hardhat-toolbox": "^1.0.1",
         "@typescript-eslint/eslint-plugin": "^5.33.0",
         "@typescript-eslint/parser": "^5.33.0",
