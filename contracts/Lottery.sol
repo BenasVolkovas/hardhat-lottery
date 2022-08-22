@@ -67,12 +67,10 @@ contract Lottery is VRFConsumerBaseV2, KeeperCompatibleInterface {
     }
 
     function enterLottery() external payable {
-        if (msg.value < ENTRENCE_FEE) {
+        if (msg.value < ENTRENCE_FEE)
             revert Lottery__SendMoreETHToParticipate();
-        }
-        if (lotteryState != LotteryState.Open) {
-            revert Lottery__StateIsNotOpen();
-        }
+
+        if (lotteryState != LotteryState.Open) revert Lottery__StateIsNotOpen();
 
         players.push(payable(msg.sender));
 

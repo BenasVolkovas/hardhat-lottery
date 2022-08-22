@@ -18,7 +18,8 @@
         "tabWidth": 4,
         "useTabs": false,
         "singleQuote": false,
-        "bracketSpacing": false
+        "bracketSpacing": false,
+        "semi": false
       }
     }
   ]
