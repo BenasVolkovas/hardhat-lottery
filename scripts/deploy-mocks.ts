@@ -1,12 +1,12 @@
 import {ethers, network} from "hardhat"
 import {SignerWithAddress} from "@nomiclabs/hardhat-ethers/signers"
-import {networkConfig, developmentChains} from "../helper-hardhat-config"
+import {developmentChains} from "../helper-hardhat-config"
 import {VRFCoordinatorV2Mock} from "../typechain-types"
 
 const BASE_FEE = ethers.utils.parseEther("0.25")
 const GAS_PRICE_LINK = 1e9
 
-const main = async (): Promise<string> => {
+const main = async (): Promise<VRFCoordinatorV2Mock | null> => {
     const accounts: SignerWithAddress[] = await ethers.getSigners()
     const deployer: SignerWithAddress = accounts[0]
 
@@ -23,12 +23,12 @@ const main = async (): Promise<string> => {
 
         console.log("Mocks deployed!")
         console.log("--------------------------------------------------")
-        return vrfMock.address
+        return vrfMock
     }
-    return ""
+    return null
 }
 
-export const deployMocks = async (): Promise<string> => {
+export const deployMocks = async (): Promise<VRFCoordinatorV2Mock | null> => {
     return await main()
 }
 
