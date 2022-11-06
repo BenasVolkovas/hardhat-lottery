@@ -4,7 +4,7 @@ import {developmentChains} from "../helper-hardhat-config"
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export const verify = async (contractAddress: string, args: any[]) => {
     if (
-        developmentChains.includes(network.name) &&
+        !developmentChains.includes(network.name) &&
         process.env.ETHERSCAN_API_KEY
     ) {
         console.log("Verifying contract on etherscan...")

@@ -1,26 +1,25 @@
-import {HardhatUserConfig} from "hardhat/config";
-import "@nomicfoundation/hardhat-toolbox";
-import "dotenv/config";
+import {HardhatUserConfig} from "hardhat/config"
+import "@nomicfoundation/hardhat-toolbox"
+import "dotenv/config"
 
 const GOERLI_RPC_URL =
     process.env.GOERLI_RPC_URL ||
-    "https://eth-goerli.g.alchemy.com/v2/your-api-key";
+    "https://eth-goerli.g.alchemy.com/v2/your-api-key"
 const MUMBAI_RPC_URL =
     process.env.MUMBAI_RPC_URL ||
-    "https://polygon-mumbai.g.alchemy.com/v2/your-api-key";
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
+    "https://polygon-mumbai.g.alchemy.com/v2/your-api-key"
+const PRIVATE_KEY = process.env.PRIVATE_KEY
 const ETHERSCAN_API_KEY =
-    process.env.ETHERSCAN_API_KEY || "Your etherscan API key";
+    process.env.ETHERSCAN_API_KEY || "Your etherscan API key"
 const POLYGONSCAN_API_KEY =
-    process.env.POLYGONSCAN_API_KEY || "Your polygonscan API key";
-const REPORT_GAS = process.env.REPORT_GAS === "true" || false;
+    process.env.POLYGONSCAN_API_KEY || "Your polygonscan API key"
+const REPORT_GAS = process.env.REPORT_GAS === "true" || false
 const COINMARKETCAP_API_KEY =
-    process.env.COINMARKETCAP_API_KEY || "Your coinmarketcap API key";
+    process.env.COINMARKETCAP_API_KEY || "Your coinmarketcap API key"
 
 const config: HardhatUserConfig = {
     solidity: "0.8.9",
     defaultNetwork: "hardhat",
-
     networks: {
         hardhat: {
             chainId: 31337,
@@ -52,6 +51,9 @@ const config: HardhatUserConfig = {
         noColors: true,
         coinmarketcap: COINMARKETCAP_API_KEY,
     },
-};
+    mocha: {
+        timeout: 200000, // 200 seconds
+    },
+}
 
-export default config;
+export default config
